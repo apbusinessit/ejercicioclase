@@ -5,3 +5,13 @@ metadata:
   name: cicd-serviceaccount
   # Opcional: El namespace donde se creará. Si se omite, se usará 'default'.
   namespace: adonis-paz-dev
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: cicd
+  namespace: adonis-paz-dev
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]
