@@ -14,4 +14,4 @@ metadata:
 rules:
 - apiGroups: ["app"]
   resources: ["deployments"]
-  verbs: ["*"]
+  verbs: ["update", "patch", "delete", "create", "get", "list"]
