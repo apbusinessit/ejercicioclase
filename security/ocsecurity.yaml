@@ -7,11 +7,15 @@ metadata:
   namespace: adonis-paz-dev
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: RoleBinding
 metadata:
-  name: cicd
+  name: cicd-binding
+  namespace: adonis
+subjects:
+- kind: ServiceAccount
+  name: cicd-serviceaccount # La cuenta de servicio que creamos
   namespace: adonis-paz-dev
-rules:
-- apiGroups: ["app"]
-  resources: ["deployments"]
-  verbs: ["update", "patch", "delete", "create", "get", "list"]
+roleRef:
+  kind: Role
+  name: admin # El rol que creamos
+  apiGroup: rbac.authorization.k8s.io
