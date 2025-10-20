@@ -12,6 +12,6 @@ metadata:
   name: cicd
   namespace: adonis-paz-dev
 rules:
-- apiGroups: ["*"]
-  resources: ["*"]
+- apiGroups: ["app"]
+  resources: ["deployments"]
   verbs: ["*"]
