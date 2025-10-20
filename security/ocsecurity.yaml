@@ -17,5 +17,5 @@ subjects:
   namespace: adonis-paz-dev
 roleRef:
   kind: Role
-  name: admin # El rol que creamos
+  name: edit # El rol que creamos
   apiGroup: rbac.authorization.k8s.io
