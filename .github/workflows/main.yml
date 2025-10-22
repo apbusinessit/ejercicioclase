@@ -69,3 +69,4 @@ jobs:
         run: |
           oc project adonis-paz-dev
           oc apply -f oc.yaml
+          oc rollout status deployment/mi-deployment
