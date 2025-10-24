@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mi-deployment-2
+  name: mi-deployment
   namespace: adonis-paz-dev
   labels:
     app: mi-app
@@ -34,6 +34,13 @@ spec:
                 name: mi-configmap
             - secretRef:
                 name: mi-secret
+          volumeMounts:
+            - name: datos
+              mount: /app/data
+      volumes:
+        - name: datos
+          persistentVolumeClaim:
+            claimName: mi-pvc
 ---
 apiVersion: v1
 kind: Service
