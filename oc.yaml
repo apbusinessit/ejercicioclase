@@ -96,6 +96,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   resources:
-    request:
+    requests:
       storage: 1Gi
   storageClassName: gp3
